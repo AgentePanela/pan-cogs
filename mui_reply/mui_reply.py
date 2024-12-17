@@ -33,7 +33,7 @@ class mui_reply(commands.Cog):
 
     @commands.command()
     @commands.is_owner()
-    async def mset_user(self, ctx, userid: str):
+    async def mset_user(self, ctx, userid: int):
         """Change user reply (use id)."""
         self.target_user_id = userid
         await ctx.send(f"User changed to <@{self.target_user_id}>")
