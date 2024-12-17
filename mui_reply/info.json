@@ -1,0 +1,8 @@
+{
+    "author" : ["agentepanela"],
+    "install_msg" : "You installed panela Mui reply cog! Good job!",
+    "name" : "Mui Replies",
+    "short" : "Reply every user message with a image.",
+    "description" : "Reply every selected user (mui) message with worst tweet ever meme.",
+    "tags" : ["ss14"]
+}
