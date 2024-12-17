@@ -1,7 +1,7 @@
 import discord
 from redbot.core import commands
 
-class AutoImageReply(commands.Cog):
+class mui_reply(commands.Cog):
     """Cog that Reply every selected user (mui) message with worst tweet ever meme."""
 
     def __init__(self, bot):
@@ -32,4 +32,4 @@ class AutoImageReply(commands.Cog):
         await ctx.send(f"Acuta image set: {self.image_url}")
 
 async def setup(bot):
-    await bot.add_cog(AutoImageReply(bot))
+    await bot.add_cog(mui_reply(bot))
