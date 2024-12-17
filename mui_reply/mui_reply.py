@@ -14,7 +14,7 @@ class mui_reply(commands.Cog):
         # if is not a bot
         if message.author.id == self.target_user_id and not message.author.bot:
             try:
-                await message.channel.reply(self.image_url)
+                await message.reply(self.image_url)
             except discord.HTTPException as e:
                 print(f"Error sending message: {e}")
 
