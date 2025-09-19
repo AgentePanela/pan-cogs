@@ -1,0 +1,8 @@
+{
+    "author" : ["agentepanela"],
+    "install_msg" : "You installed panela week away cog! Good job!",
+    "name" : "Week Away",
+    "short" : "Reply every selected message with customizaded message.",
+    "description" : "Reply every selected message with customizaded message.",
+    "tags" : ["ss14"]
+}
