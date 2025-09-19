@@ -37,6 +37,7 @@ class week_away(commands.Cog):
             await ctx.send_help(ctx.command)
 
     @weekaway.command(name="add")
+    @commands.is_owner()
     async def add_reply(self, ctx, word: str, *, reply: str):
         """Adiciona uma nova palavra e resposta.
         Exemplo: [p]weekaway add oi 'Olá, tudo bem?'"""
@@ -45,6 +46,7 @@ class week_away(commands.Cog):
         await ctx.send(f"✅ Palavra `{word}` adicionada com resposta: {reply}")
 
     @weekaway.command(name="remove")
+    @commands.is_owner()
     async def remove_reply(self, ctx, word: str):
         """Remove uma palavra configurada."""
         async with self.config.guild(ctx.guild).replies() as replies:
