@@ -1,7 +1,7 @@
 import discord
 from redbot.core import commands, Config
 
-class WeekAway(commands.Cog):
+class week_away(commands.Cog):
     """Reply to selected words with customized messages."""
 
     def __init__(self, bot):
