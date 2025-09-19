@@ -1,4 +1,4 @@
-from .weekaway import WeekAway
+from .week_away import week_away
 
 async def setup(bot):
-    await bot.add_cog(WeekAway(bot))
+    await bot.add_cog(week_away(bot))
