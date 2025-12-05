@@ -1,5 +1,5 @@
 import discord
-from redbot.core import commands, Config
+from redbot.core import commands, Config, app_commands
 
 class week_away(commands.Cog):
     """Reply to selected words with customized messages."""
@@ -11,6 +11,10 @@ class week_away(commands.Cog):
         # Estrutura: {"palavra": "resposta"}
         default_guild = {"replies": {}}
         self.config.register_guild(**default_guild)
+    
+    @app_commands.command()
+    async def hello(self, interaction: discord.Interaction):
+        await interaction.response.send_message("Hello World!", ephemeral=False)
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
