@@ -11,10 +11,6 @@ class week_away(commands.Cog):
         # Estrutura: {"palavra": "resposta"}
         default_guild = {"replies": {}}
         self.config.register_guild(**default_guild)
-    
-    @app_commands.command()
-    async def hello(self, interaction: discord.Interaction):
-        await interaction.response.send_message("Hello World!", ephemeral=False)
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
@@ -36,9 +32,13 @@ class week_away(commands.Cog):
     @commands.group(name="weekaway")
     @commands.guild_only()
     async def weekaway(self, ctx):
-        """Gerenciar respostas automáticas do Week Away."""
+        """godo"""
         if ctx.invoked_subcommand is None:
             await ctx.send_help(ctx.command)
+
+    @weekaway.command(name="hello", description="Hello World!")
+    async def hello(self, interaction: discord.Interaction):
+        await interaction.response.send_message("Hello World!", ephemeral=False)
 
     @weekaway.command(name="add")
     @commands.is_owner()
@@ -72,3 +72,13 @@ class week_away(commands.Cog):
         for word, reply in replies.items():
             msg += f"- `{word}` → {reply}\n"
         await ctx.send(msg)
+    
+    async def setup(bot):
+        cog = week_away(bot)
+        await bot.add_cog(cog)
+
+        # Registra o slash command da cog
+        bot.tree.add_command(cog.hello)
+
+        # Sincroniza com o Discord
+        await bot.tree.sync()
